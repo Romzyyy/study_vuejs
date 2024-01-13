@@ -11,33 +11,32 @@
             {{ count }}
             <button @click="tambah()">+</button>
             <div v-text="message"></div>
-            <div v-text="message2">
-                ini adalah random text
-            </div>
-            <div v-html="message3">
-                ini random text
-            </div>
+            <div v-text="message2">ini adalah random text</div>
+            <div v-html="message3">ini random text</div>
+            <div v-html="image">ini gambar</div>
         </div>
         <script type="module">
-            import {createApp} from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+            import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
 
             createApp({
-                data(){
-                    return{
-                        count : 0,
+                data() {
+                    return {
+                        count: 0,
                         message: 'hello world',
-                        message2: "ini akan mereplace original text",
-                        message3: "<strong>ini akan mereplace original text</strong>"
+                        message2: 'ini akan mereplace original text',
+                        message3:
+                            '<strong>ini akan mereplace original text</strong>',
+                        image: '<img src="computer.jpg" alt="">'
                     }
                 },
                 methods: {
-                    kurang(){
+                    kurang() {
                         this.count--
                     },
-                    tambah(){
+                    tambah() {
                         this.count++
-                    }
-                }
+                    },
+                },
             }).mount('#app')
         </script>
     </body>

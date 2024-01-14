@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <style>
+        #text {
+            color: rgb(255, 230, 0);
+        }
+    </style>
+    <body>
+        <div id="app">
+            <a v-bind:href="url">klik disini</a>
+            <a :href="url">klik disini</a>
+            <div> 
+                <p :id="select">name = {{user.name}}</p>
+                <img :src="user.image" :style="{width: ukuranImg}" :alt="'image of ' + user.name" :title="'image of ' + user.name">
+            </div>
+        </div>
+
+        <script type="module">
+            import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+            createApp({
+                data() {
+                    return {
+                        url: 'index.html',
+                        user: {
+                            name: 'jeck',
+                            image: 'https://t3.ftcdn.net/jpg/03/02/88/46/240_F_302884605_actpipOdPOQHDTnFtp4zg4RtlWzhOASp.jpg',
+                        },
+                        ukuranImg: '400px',
+                        select: 'text'
+                    }
+                },
+            }).mount('#app')
+        </script>
+    </body>
+</html>
